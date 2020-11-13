@@ -1,0 +1,497 @@
+/*
+1. Posicionamiento
+2. Modelos de caja
+3. Tipografía
+4. Visuales
+5. Otros
+*/
+
+/*
+///// VARIABLES
+*/
+
+:root {
+
+    /* Colores */
+
+    --orange-gradient: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+    --bitcoin-orange: #F7931A;
+    --soft-orange: #FFE9D5;
+    --secondary-blue: #1A9AF7;
+    --soft-blue: #E7F5FF;
+    --warm-black: #201E1C;
+    --black: #282623;
+    --grey: #BABABA;
+    --greyer: #808080;
+    --greyish: #E5E5E5;
+    --off-white: #FAF8F7;
+    --just-white: #fff;
+}
+
+/*
+///// RESET
+*/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+    /* font-family: 'Inter', sans-serif; */
+    scroll-behavior: smooth;
+}
+
+/*
+///// HEADER
+*/
+
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 334px;
+    width: 100%;
+    min-width: 320px; /* La dimensión más pequeña en móvil */
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+}
+
+header img {
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+    align-self: center;
+}
+
+.header-container {
+    width: 90%;
+    min-width: 288px;
+    max-width: 700px;
+    height: 218px;
+    margin-top: 50px;
+    text-align: center;
+    align-self: center; /* En lugar del margin auto 0; */
+}
+
+.header-container__title {
+    color: var(--just-white);
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+}
+
+.header-container__subtitle {
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--soft-orange);
+}
+
+.header-container__button {
+    position: absolute;
+    left: calc(50% - 112px);
+    top:270px;
+    display: block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--off-white);
+    box-shadow: 0px 4px 8px rgba(89, 73, 30,0.16);
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--black);
+}
+
+.header-container__button span {
+    display: inline-block;
+    width: 13px;
+    height: 8px;
+    margin-left: 10px;
+    background-image: url("../assets/iconos/icon_arrow_down.svg");
+}
+
+/*
+///// MAIN
+*/
+
+main {
+    width: 100%;
+    height: auto;
+    background-color: var(--off-white);
+}
+
+/* MAIN -- EXCHANGE */
+
+.main-exchange-container {
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.main-exchange__text {
+    width: 90%;
+    min-width: 280px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.main-exchange__img {
+    background-image: url(../assets/img/btc.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.main-exchange__title {
+    margin-bottom: 30px;
+    font-size: 2.3rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+
+.main-exchange__subtitle {
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+
+/* MAIN -- EXCHANGE __ TABLAS */ 
+
+.main-exchange__tablas {
+    display: flex;
+    align-items: baseline;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    padding: 1rem 0;
+}
+
+.main-exchange__monedas,
+.main-exchange__comisiones {
+    min-width: 270px;
+    max-width: 350px;
+    height: 300px;
+    margin: 0 auto;
+    scroll-snap-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.monedas__titulo__naranja, 
+.comisiones__titulo__azul {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.3rem;
+    margin-bottom: 12px;
+}
+
+.monedas__titulo__naranja {
+    color: var(--bitcoin-orange);
+}
+
+.comisiones__titulo__azul {
+    color:var(--secondary-blue);
+}
+
+/* MAIN -- EXCHANGE __ GRID */ 
+
+.monedas__grid,
+.comisiones__grid {
+    border-radius: 3%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    column-gap: 2px;
+    row-gap: 2px;
+    overflow: hidden;
+}
+
+.monedas__grid div,
+.comisiones__grid div {
+    padding: 1.3rem;
+    font-family: 'Inter', sans-serif;
+    background: var(--just-white);
+}
+
+.monedas__grid h4,
+.comisiones__grid h4 {
+    color: #B5B0AC;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 19.36px;
+}
+
+.monedas__grid p,
+.comisiones__grid p {
+    color: #757575;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 19.36px;
+}
+
+.monedas__grid img,
+.comisiones__grid img {
+    padding-left: 15px;
+}
+
+.monedas__actualizacion__naranja, 
+.comisiones__actualizacion__azul {
+    font-family: 'Inter', sans-serif;
+    display: inline-block;
+    font-size: 1.3rem;
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.monedas__actualizacion__naranja { 
+    background-color: var(--soft-orange);
+}
+
+.comisiones__actualizacion__azul { 
+    background-color: var(--soft-blue);
+}
+
+/* MAIN -- FEATURES */ 
+
+.main-features-container {
+    background-color: var(--warm-black);
+    font-family: 'DM Sans', sans-serif;
+    padding: 20px 10px;
+    position: relative;
+}
+
+.main-features-container p {
+    color: var(--greyer);
+}
+
+.main-features__papa {
+    position: absolute;
+    top: calc(0% - 12.5px);
+    left: calc(50% - 20px);
+}
+
+.main-features__title {
+    font-size: 2.3rem;
+    margin: 30px 0;
+    font-weight: bold;
+    line-height: 2.6rem;
+    text-align: center;
+}
+.main-features__title,
+.main-features-container h3 {
+    color: var(--just-white);
+}
+
+
+.main-features__subtitle {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+/* MAIN -- FEATURES __ BLOCKS */ 
+
+.main-features__bloques {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.main-features__bloques h3 {
+    font-size: 1.6rem;
+    padding: 5px 0;
+}
+
+.main-features__bloques p {
+    font-size: 1.4rem;
+}
+
+.features__bloque {
+    background-color: var(--black);
+    padding: 20px;
+    margin: 10px 15px;
+    width: 90%;
+    min-width: 288px;
+    max-width: 300px;
+    min-height: 150px;
+}
+
+/* MAIN -- PICTURE SECTION */
+
+.main-picture-container {
+    background-image: url('../assets/img/chica_x2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    min-width: 320px;
+}
+
+.main-picture__title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    padding-top: 30px;
+    line-height: 2.6rem;
+    text-align: center;
+    color: var(--just-white);
+}
+
+/* MAIN -- PLANES SECTION */
+
+.main-planes-container {
+    font-family: 'DM Sans', sans-serif;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.main-planes__titulo {
+    font-size: 2.3rem;
+    font-weight: 700;
+    padding: 20px 0;
+    line-height: 2.6rem;
+}
+
+.main-planes__subtitulo {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    color: #757575;
+    ;
+}
+
+/* PLANES FICHAS */
+
+.main-planes__fichas {
+    display: flex;
+    height: 316px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+.main-planes__ficha {
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 190px;
+    max-width: 300px;
+    height: 250px;
+    margin: 50px 10px 0;
+    padding: 0 15px;
+    background-color: var(--just-white);
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px 0px rgba(89, 73, 30, 0.16);
+}
+
+.main-planes__ficha > div {
+    padding: 30px 15px;
+}
+
+.ficha__titulo {
+    font-size: 1.6rem;
+}
+
+.ficha__precio {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.ficha__precio > span {
+    font-size: 1.4rem;
+    vertical-align: 25px;
+}
+
+.ficha__asterisco {
+    margin: 10px 0;
+    font-size: 1.3rem;
+}
+
+.ficha__recomendado {
+    position: absolute;
+    background: var(--bitcoin-orange);
+    padding: 7px;
+    border-radius: 5px;
+    top: calc(0% - 12.5px);
+    left: calc(50% - 38px);
+    color: var(--just-white);
+    font-size: 1.2rem;
+
+}
+
+.ficha__boton {
+    padding: 10px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    min-width: 130px;
+    justify-content: space-between;
+    border-color: var(--bitcoin-orange);
+    border-style: solid;
+    background-color: var(--off-white);
+    border-radius: 3px;
+}
+
+/*
+///// FOOTER
+*/
+
+footer {
+    background-color: var(--bitcoin-orange);
+}
+
+.footer-container {
+    display: flex;
+    padding: 30px;
+    justify-content: space-around;
+    color: var(--just-white);
+    font-size: 1.4rem;
+}
+
+.footer__social-list,
+.footer__copyright {
+    margin: 20px;
+}
+
+.footer__social-list > ul {
+    list-style-type: none;
+    line-height: 2.5rem;
+}
+
+.social__item > a {
+    color: var(--just-white);
+    text-decoration: none;
+    line-height: 18px;
+}
+
+.copyright__item {
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+
+
+
+
+
+
